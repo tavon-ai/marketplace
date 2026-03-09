@@ -1,0 +1,11 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "A simple example plugin demonstrating how to create a skill",
+  "author": {
+    "name": "Tavon",
+    "url": "https://github.com/tavon-ai"
+  },
+  "category": "productivity",
+  "tags": ["example", "starter", "tutorial"]
+}

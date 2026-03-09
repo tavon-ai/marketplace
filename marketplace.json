@@ -1,0 +1,31 @@
+{
+  "name": "tavon-marketplace",
+  "version": "1.0.0",
+  "description": "A curated marketplace for Claude Code and Cowork plugins",
+  "homepage": "https://github.com/tavon-ai/marketplace",
+  "repository": "https://github.com/tavon-ai/marketplace",
+  "author": {
+    "name": "Tavon",
+    "url": "https://github.com/tavon-ai"
+  },
+  "plugins": [
+    {
+      "name": "hello-world",
+      "version": "1.0.0",
+      "path": "plugins/hello-world",
+      "description": "A simple example plugin demonstrating how to create a skill",
+      "category": "productivity",
+      "tags": ["example", "starter", "tutorial"],
+      "author": {
+        "name": "Tavon"
+      }
+    }
+  ],
+  "categories": [
+    "development",
+    "productivity",
+    "integrations",
+    "ai-tools",
+    "data"
+  ]
+}

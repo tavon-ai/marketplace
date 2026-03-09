@@ -20,3 +20,14 @@ A curated marketplace for Claude Code and Cowork plugins.
 
 ### hello-world
 Example plugin demonstrating how to create a skill.
+
+## Repository Structure
+
+```
+.
+├── .claude-plugin/
+│   └── marketplace.json    # Marketplace registry
+├── plugins/
+│   └── hello-world/        # Example plugin
+└── index.html             # Landing page
+```

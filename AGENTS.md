@@ -165,6 +165,12 @@ Assistant: "response"
 - Check plugin.json exists in plugin's `.claude-plugin/` directory
 - Ensure `source` path is correct (relative to repo root)
 
+### Plugin shows old name or version in browser
+- The Claude plugin browser reads from `.claude-plugin/marketplace.json`, NOT individual plugin.json files
+- Must update both files when renaming or versioning:
+  1. `plugins/plugin-name/.claude-plugin/plugin.json`
+  2. `.claude-plugin/marketplace.json` (update name, version, source)
+
 ## Development Workflow
 
 1. Create plugin locally in `plugins/`
@@ -202,6 +208,9 @@ The landing page at `index.html` is automatically deployed via GitHub Pages:
 
 ### For Marketplace Maintenance:
 - ✅ Keep marketplace.json in sync with actual plugins
+- ✅ **CRITICAL:** When renaming plugins or updating versions, update BOTH:
+  - Individual plugin's `.claude-plugin/plugin.json`
+  - Root `.claude-plugin/marketplace.json` (name, version, source path)
 - ✅ Version bumps when updating plugins
 - ✅ Test installations before releasing
 - ✅ Update landing page with new plugins

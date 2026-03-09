@@ -1,6 +1,6 @@
 {
-  "name": "landing-page-builder",
-  "version": "1.0.0",
+  "name": "landing-page-webflow",
+  "version": "0.0.1",
   "description": "Automated landing page creation for Webflow with conversion-optimized layouts, SEO metadata, and mobile responsiveness",
   "author": {
     "name": "Tavon",

@@ -10,7 +10,7 @@
     {
       "name": "hello-world",
       "description": "A simple example plugin demonstrating how to create a skill",
-      "version": "1.0.0",
+      "version": "0.0.1",
       "author": {
         "name": "Tavon",
         "email": "hello@tavon.ai"
@@ -20,14 +20,14 @@
       "strict": false
     },
     {
-      "name": "landing-page-builder",
+      "name": "landing-page-webflow",
       "description": "Automated landing page creation for Webflow with conversion-optimized layouts, SEO metadata, and mobile responsiveness",
-      "version": "1.0.0",
+      "version": "0.0.1",
       "author": {
         "name": "Tavon",
         "email": "hello@tavon.ai"
       },
-      "source": "./plugins/landing-page-builder",
+      "source": "./plugins/landing-page-webflow",
       "category": "development",
       "strict": false
     }

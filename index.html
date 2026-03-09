@@ -91,7 +91,7 @@
 
   <!-- JavaScript to load plugins -->
   <script>
-    fetch('marketplace.json')
+    fetch('.claude-plugin/marketplace.json')
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById('plugins-grid');

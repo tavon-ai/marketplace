@@ -90,65 +90,85 @@
     </div>
   </footer>
 
-  <!-- JavaScript to load plugins -->
+  <!-- JavaScript to render plugins -->
   <script>
-    fetch('.claude-plugin/marketplace.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('plugins-grid');
-        const count = document.getElementById('plugin-count');
+    // Static plugin data (update this when adding new plugins)
+    const plugins = [
+      {
+        name: "hello-world",
+        description: "A simple example plugin demonstrating how to create a skill",
+        version: "0.0.1",
+        category: "productivity",
+        tags: ["tutorial", "example", "beginner"],
+        source: "./plugins/hello-world"
+      },
+      {
+        name: "landing-page-webflow",
+        description: "Automated landing page creation for Webflow with conversion-optimized layouts, SEO metadata, and mobile responsiveness",
+        version: "0.0.1",
+        category: "development",
+        tags: ["webflow", "landing-page", "marketing", "automation"],
+        source: "./plugins/landing-page-webflow"
+      }
+    ];
+    
+    const container = document.getElementById('plugins-grid');
+    const count = document.getElementById('plugin-count');
+    
+    count.textContent = plugins.length;
+    
+    const categoryColors = {
+      'development': 'bg-blue-100 text-blue-800',
+      'productivity': 'bg-green-100 text-green-800',
+      'integrations': 'bg-purple-100 text-purple-800',
+      'ai-tools': 'bg-orange-100 text-orange-800',
+      'data': 'bg-pink-100 text-pink-800'
+    };
+    
+    plugins.forEach(plugin => {
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow';
+      
+      const categoryClass = categoryColors[plugin.category] || 'bg-gray-100 text-gray-800';
+      
+      const tags = plugin.tags || [];
+      const tagsHtml = tags.length > 0 
+        ? `<div class="flex flex-wrap gap-2 mb-4">
+            ${tags.map(tag => 
+              `<span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">#${tag}</span>`
+            ).join('')}
+           </div>`
+        : '';
+      
+      const readmeLink = `https://github.com/tavon-ai/marketplace/tree/main/${plugin.source}`;
+      
+      card.innerHTML = `
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">${plugin.name}</h3>
+          <p class="text-gray-600 text-sm">${plugin.description}</p>
+        </div>
         
-        count.textContent = data.plugins.length;
+        <div class="mb-4">
+          <span class="${categoryClass} px-3 py-1 rounded-full text-xs font-medium">
+            ${plugin.category}
+          </span>
+        </div>
         
-        data.plugins.forEach(plugin => {
-          const card = document.createElement('div');
-          card.className = 'bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow';
-          
-          const categoryColors = {
-            'development': 'bg-blue-100 text-blue-800',
-            'productivity': 'bg-green-100 text-green-800',
-            'integrations': 'bg-purple-100 text-purple-800',
-            'ai-tools': 'bg-orange-100 text-orange-800',
-            'data': 'bg-pink-100 text-pink-800'
-          };
-          
-          const categoryClass = categoryColors[plugin.category] || 'bg-gray-100 text-gray-800';
-          
-          card.innerHTML = `
-            <div class="mb-4">
-              <h3 class="text-xl font-bold text-gray-900 mb-2">${plugin.name}</h3>
-              <p class="text-gray-600 text-sm">${plugin.description}</p>
-            </div>
-            
-            <div class="mb-4">
-              <span class="${categoryClass} px-3 py-1 rounded-full text-xs font-medium">
-                ${plugin.category}
-              </span>
-            </div>
-            
-            <div class="flex flex-wrap gap-2 mb-4">
-              ${plugin.tags.map(tag => 
-                `<span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">#${tag}</span>`
-              ).join('')}
-            </div>
-            
-            <div class="flex items-center justify-between pt-4 border-t border-gray-200">
-              <span class="text-xs text-gray-500">v${plugin.version}</span>
-              <a href="${plugin.path}/README.md" 
-                 class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-                View Details →
-              </a>
-            </div>
-          `;
-          
-          container.appendChild(card);
-        });
-      })
-      .catch(error => {
-        console.error('Error loading plugins:', error);
-        document.getElementById('plugins-grid').innerHTML = 
-          '<div class="col-span-full text-center text-gray-600">Error loading plugins. Please try again later.</div>';
-      });
+        ${tagsHtml}
+        
+        <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+          <span class="text-xs text-gray-500">v${plugin.version}</span>
+          <a href="${readmeLink}" 
+             target="_blank"
+             rel="noopener noreferrer"
+             class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            View Details →
+          </a>
+        </div>
+      `;
+      
+      container.appendChild(card);
+    });
   </script>
 
 </body>

@@ -18,6 +18,18 @@
       "source": "./plugins/hello-world",
       "category": "productivity",
       "strict": false
+    },
+    {
+      "name": "landing-page-builder",
+      "description": "Automated landing page creation for Webflow with conversion-optimized layouts, SEO metadata, and mobile responsiveness",
+      "version": "1.0.0",
+      "author": {
+        "name": "Tavon",
+        "email": "hello@tavon.ai"
+      },
+      "source": "./plugins/landing-page-builder",
+      "category": "development",
+      "strict": false
     }
   ]
 }

@@ -1,0 +1,11 @@
+{
+  "name": "landing-page-builder",
+  "version": "1.0.0",
+  "description": "Automated landing page creation for Webflow with conversion-optimized layouts, SEO metadata, and mobile responsiveness",
+  "author": {
+    "name": "Tavon",
+    "url": "https://github.com/tavon-ai"
+  },
+  "category": "development",
+  "tags": ["webflow", "landing-page", "marketing", "seo", "conversion"]
+}

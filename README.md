@@ -21,6 +21,15 @@ A curated marketplace for Claude Code and Cowork plugins.
 ### hello-world
 Example plugin demonstrating how to create a skill.
 
+**Category:** productivity  
+**Tags:** example, starter, tutorial
+
+### landing-page-builder
+Automated landing page creation for Webflow with conversion-optimized layouts, SEO metadata, and mobile responsiveness.
+
+**Category:** development  
+**Tags:** webflow, landing-page, marketing, seo, conversion
+
 ## Repository Structure
 
 ```
